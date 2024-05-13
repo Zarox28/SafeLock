@@ -27,9 +27,9 @@ Welcome to SafeLock, a macOS app designed to enhance your screen security. SafeL
 - macOS 10.15 or later
 - FFMPEG must be installed on your system.
 
-> ```bash
-> brew install ffmpeg
-> ```
+```bash
+brew install ffmpeg
+```
 
 ## Installation
 
@@ -65,7 +65,7 @@ Contributing is disabled for this repository.
 
 ## License
 
-This project is licensed under the AGPL v3 License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the AGPL v3 License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Authors
 
