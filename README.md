@@ -53,13 +53,13 @@ brew install ffmpeg
 
 1. Open `SafeLock.app`.
 
-<img src="assets/default.png" width="500" style="display: block; margin: 0 auto" \>
+<img src="assets/default.png" width="500" style="display: block; margin: 0 auto" />
 
 2. Click on the `enable` button to start the screen lock.
 
 3. To disable the screen lock, click on the `disable` button.
 
-<img src="assets/recording.png" width="500" style="display: block; margin: 0 auto" \>
+<img src="assets/recording.png" width="500" style="display: block; margin: 0 auto" />
 
 ## Changelog
 
