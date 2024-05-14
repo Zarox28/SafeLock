@@ -1,13 +1,11 @@
-# SafeLock
-
-![Swift](https://img.shields.io/badge/swift-%23007ACC.svg?style=for-the-badge&logo=swift&logoColor=white)
-![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge)
-
-<p align="center">
+<div align="center">
 	<img src="assets/logo.png" width="200"/>
-</p>
+	<h1>SafeLock</h1>
+	<img src="https://img.shields.io/badge/swift-%23007ACC.svg?style=for-the-badge&logo=swift&logoColor=white"/>
+	<img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge"/>
+</div>
 
-> Version: **1.0.2**
+> Version: **1.0.3**
 
 ---
 
@@ -55,17 +53,17 @@ brew install ffmpeg
 
 1. Open `SafeLock.app`.
 
-<p align="center">
+<div align="center">
 	<img src="assets/default.png" width="500"/>
-</p>
+</div>
 
 2. Click on the `enable` button to start the screen lock.
 
 3. To disable the screen lock, click on the `disable` button.
 
-<p align="center">
+<div align="center">
 	<img src="assets/recording.png" width="500"/>
-</p>
+</div>
 
 ## Changelog
 
