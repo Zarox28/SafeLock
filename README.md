@@ -5,6 +5,8 @@
 	<img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge"/>
 </div>
 
+<br />
+
 > Version: **1.0.3**
 
 ---
