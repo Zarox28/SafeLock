@@ -13,37 +13,37 @@ struct MainView: View {
 
   var body: some View {
     VStack {
-      // MARK: Header
-      VStack(alignment: .trailing) {
-        // Alarm state
-        HStack {
-          Text("Alarm State")
-            .bold()
-            .font(.largeTitle)
-            .padding(.bottom, 3)
-        }
+        // MARK: Header
+        VStack(alignment: .trailing) {
+          // Alarm state
+          HStack {
+            Text("Alarm State")
+              .bold()
+              .font(.largeTitle)
+              .padding(.bottom, 3)
+          }
 
-        // Display current state
-        HStack {
-          Text(states[currentState]) // Display current state text
-            .padding(.bottom, 1)
+          // Display current state
+          HStack {
+            Text(states[currentState]) // Display current state text
+              .padding(.bottom, 1)
 
-          // Display current state icon
-          switch currentState {
-            case 1:
-              Image(systemName: "circle.dashed")
-                .foregroundColor(.orange)
-            case 2:
-              Image(systemName: "circle.fill")
-                .foregroundColor(.green)
-            default:
-              Image(systemName: "circle")
-                .foregroundColor(.red)
+            // Display current state icon
+            switch currentState {
+              case 1:
+                Image(systemName: "circle.dashed")
+                  .foregroundColor(.orange)
+              case 2:
+                Image(systemName: "circle.fill")
+                  .foregroundColor(.green)
+              default:
+                Image(systemName: "circle")
+                  .foregroundColor(.red)
+            }
           }
         }
-      }
-      .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
-      .padding()
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+        .padding()
 
       // MARK: Main content
       HStack(spacing: 10) {
@@ -72,6 +72,16 @@ struct MainView: View {
       // MARK: Footer
       /// Toggle alarm button
       HStack {
+        // Settings Button
+        SettingsLink(label: {
+            Image(systemName: "gear")
+        })
+        .controlSize(.large)
+        
+        // Spacing
+        Spacer()
+        
+        // Toggle Button
         switch currentState {
           case 1, 2:
             Button("Disable", action: {
@@ -96,8 +106,7 @@ struct MainView: View {
             .buttonStyle(.borderedProminent).tint(.primary)
         }
       }
-      .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
-      .padding(.top, 5)
+      .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .bottom)
     }
     .padding().ignoresSafeArea()
     .frame(width: 600, height: 400)

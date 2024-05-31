@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3980422B2C09F6DC003807C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980422A2C09F6DC003807C4 /* SettingsView.swift */; };
+		398042302C0A0E49003807C4 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980422F2C0A0E49003807C4 /* GeneralSettingsView.swift */; };
+		398042322C0A0EE2003807C4 /* ModulesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398042312C0A0EE2003807C4 /* ModulesSettingsView.swift */; };
 		603347102BF0C49D0057AD8B /* SafeLockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033470F2BF0C49D0057AD8B /* SafeLockApp.swift */; };
 		603347142BF0C49E0057AD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603347132BF0C49E0057AD8B /* Assets.xcassets */; };
 		603347172BF0C49E0057AD8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603347162BF0C49E0057AD8B /* Preview Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3980422A2C09F6DC003807C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3980422F2C0A0E49003807C4 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		398042312C0A0EE2003807C4 /* ModulesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesSettingsView.swift; sourceTree = "<group>"; };
 		6033470C2BF0C49D0057AD8B /* SafeLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6033470F2BF0C49D0057AD8B /* SafeLockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLockApp.swift; sourceTree = "<group>"; };
 		603347132BF0C49E0057AD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		398042292C09F6CF003807C4 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				3980422F2C0A0E49003807C4 /* GeneralSettingsView.swift */,
+				3980422A2C09F6DC003807C4 /* SettingsView.swift */,
+				398042312C0A0EE2003807C4 /* ModulesSettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		603347032BF0C49D0057AD8B = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +98,7 @@
 		6033471E2BF0C4B20057AD8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				398042292C09F6CF003807C4 /* SettingsView */,
 				603347272BF0C7C60057AD8B /* LogsView */,
 				603347222BF0C6B50057AD8B /* MainView */,
 				6033471F2BF0C4BA0057AD8B /* AboutView.swift */,
@@ -179,6 +196,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				603347202BF0C4BA0057AD8B /* AboutView.swift in Sources */,
+				398042322C0A0EE2003807C4 /* ModulesSettingsView.swift in Sources */,
+				3980422B2C09F6DC003807C4 /* SettingsView.swift in Sources */,
+				398042302C0A0E49003807C4 /* GeneralSettingsView.swift in Sources */,
 				6033472B2BF0C7DB0057AD8B /* LogsViewExtension.swift in Sources */,
 				603347242BF0C6CB0057AD8B /* MainView.swift in Sources */,
 				603347102BF0C49D0057AD8B /* SafeLockApp.swift in Sources */,
