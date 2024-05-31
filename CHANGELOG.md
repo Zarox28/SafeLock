@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2024-05-31
+
+### Changed
+
+- Complete overhaul of the code structure
+
 ## [1.1.0] - 2024-05-31
 
 ### Added

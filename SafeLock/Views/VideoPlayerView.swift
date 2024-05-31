@@ -29,17 +29,16 @@ struct VideoViewer: NSViewRepresentable {
 // MARK: - Video Player View
 /// The SwiftUI view for displaying video player based on the current state
 struct VideoPlayerView: View {
-  @Binding var currentState: Int // Binding to current state
-  @Binding var hasRecorded: Bool // Binding for whether recording has been made or not
-  @Binding var logs: Array<(text: String, type: Int)> // Binding to logs
-  @Binding var accessGranted: Bool // Binding to access granted
-
   @State var dotVisibilities = [false, false, false] // 3 dots animation
+  
+  @ObservedObject var logsManager = LogsManager.shared
+  @ObservedObject var cameraManager = CameraManager.shared
+  @ObservedObject var global = Global.shared
 
   var body: some View {
     // Check state to determine UI
-    if currentState == 0 { // MARK: Disabled
-      if hasRecorded {
+    if global.currentState == 0 { // MARK: Disabled
+      if cameraManager.hasRecorded {
         VideoViewer(
           player: AVPlayer(
             url: URL(fileURLWithPath: (
@@ -60,7 +59,7 @@ struct VideoPlayerView: View {
           .font(.largeTitle)
       }
 
-    } else if currentState == 1 { // MARK: Recording
+    } else if global.currentState == 1 { // MARK: Recording
       Image(systemName: "video")
         .padding(.bottom, 10)
         .font(.system(size: 50))
@@ -71,7 +70,7 @@ struct VideoPlayerView: View {
         .font(.largeTitle)
         .padding(.bottom, 10)
         .onAppear {
-          LogsView(logs: $logs).addLog(text: "Recording", type: 2) // Show message when recording
+          logsManager.addLog(text: "Recording", type: 2) // Show message when recording
         }
 
       // Dots
@@ -100,8 +99,8 @@ struct VideoPlayerView: View {
         .bold()
         .font(.largeTitle)
         .onAppear {
-          guard accessGranted else { return } // Check access
-          LogsView(logs: $logs).addLog(text: "Ready to record", type: 1) // Show message when ready to record
+          guard global.accessGranted else { return } // Check access
+          logsManager.addLog(text: "Ready to record", type: 1) // Show message when ready to record
         }
     }
   }

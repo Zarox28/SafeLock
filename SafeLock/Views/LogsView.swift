@@ -4,22 +4,22 @@ import SwiftUI
 // MARK: - Logs View
 /// The SwiftUI view for displaying logs
 struct LogsView: View {
-  @Binding var logs: Array<(text: String, type: Int)> // Binding for logs
-
+  @ObservedObject var logsManager = LogsManager.shared
+  
   var body : some View {
     ScrollView(.vertical, showsIndicators: false) {
-      ForEach(logs.indices, id: \.self) { index in
+      ForEach(logsManager.logs.indices, id: \.self) { index in
         HStack {
-          Text(formattedDate())
+          Text(logsManager.formattedDate())
             .font(.system(size: 12))
             .foregroundColor(.gray)
 
-          Text(logSymbol(type: logs[index].type))
+          Text(LogsManager.shared.logSymbol(type: logsManager.logs[index].type))
             .font(.system(size: 12))
 
-          Text(logs[index].text)
+          Text(logsManager.logs[index].text)
             .font(.system(size: 12))
-            .foregroundColor(logColor(type: logs[index].type))
+            .foregroundColor(logsManager.logColor(type: logsManager.logs[index].type))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -27,6 +27,6 @@ struct LogsView: View {
         Spacer()
       }
     }
-    .disabled(logs.count <= 11) // Disable scroll if logs count is below or equal to 11 (max size)
+    .disabled(logsManager.logs.count <= 11) // Disable scroll if logs count is below or equal to 11 (max size)
   }
 }
