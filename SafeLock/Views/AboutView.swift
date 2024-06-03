@@ -13,18 +13,18 @@ struct AboutView: View {
           Image("AboutIcon")
             .resizable()
             .frame(width: 90, height: 90)
-
+          
           // Name
           VStack(spacing: 5) {
             Text("SafeLock")
               .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
               .bold()
-
+            
             Text("By Zarox28")
           }
         }
         .frame(maxWidth: .infinity)
-
+        
         // MARK: Informations & GitHub Button
         HStack(alignment: .bottom) {
           // App informations
@@ -33,27 +33,27 @@ struct AboutView: View {
             HStack {
               Text("Release:")
                 .bold()
-
+              
               Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)
             }
-
+            
             // Build
             HStack {
               Text("Build:")
                 .bold()
-
+              
               Text(Bundle.main.infoDictionary?["CFBundleVersion"] as! String)
             }
           }
-
+          
           Spacer()
-
+          
           // GitHub button
           Link(destination: URL(string: "https://github.com/Zarox28/SafeLock")!) {
             Image("GitHubLogo")
               .resizable()
               .frame(width: 20, height: 20)
-
+            
             Image("GitHubText")
               .resizable()
               .frame(width: 50, height: 20)

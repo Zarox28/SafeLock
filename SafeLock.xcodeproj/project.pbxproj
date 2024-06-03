@@ -94,11 +94,11 @@
 			children = (
 				398042332C0A3D64003807C4 /* Managers */,
 				6033471E2BF0C4B20057AD8B /* Views */,
+				3980423A2C0A468F003807C4 /* Global.swift */,
 				6033470F2BF0C49D0057AD8B /* SafeLockApp.swift */,
 				603347132BF0C49E0057AD8B /* Assets.xcassets */,
 				603347182BF0C49E0057AD8B /* SafeLock.entitlements */,
 				603347152BF0C49E0057AD8B /* Preview Content */,
-				3980423A2C0A468F003807C4 /* Global.swift */,
 			);
 			path = SafeLock;
 			sourceTree = "<group>";
