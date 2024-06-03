@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Added settings to save video recorded
-- Added `removeRecod` function
+- Added `removeRecord` function
 
 ## [2.0.1] - 2024-06-03
 
