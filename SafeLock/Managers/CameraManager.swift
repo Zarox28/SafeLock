@@ -20,12 +20,17 @@ class CameraManager: ObservableObject {
     }
   }
   
+  // MARK: Record Path
+  /// Path to the recorded video
+  @Published private var _recordPath: String = (NSTemporaryDirectory() as NSString).appendingPathComponent("webcam.mp4")
+  var recordPath: String {
+    return _recordPath
+  }
+  
   // MARK: Start Recording Function
   /// Starts recording the webcam
   func startRecording() throws -> Void {
-    let outputFilePath: String = (NSTemporaryDirectory() as NSString).appendingPathComponent("webcam.mp4")
-    
-    try? FileManager.default.removeItem(atPath: outputFilePath)
+    if hasRecorded { removeRecord() } // Remove previous video file if it exists
     
     guard Global.shared.accessGranted else {
       LogsManager.shared.addLog(text: "Access to camera denied", type: 3)
@@ -35,7 +40,7 @@ class CameraManager: ObservableObject {
     let task = Process()
     
     task.executableURL = URL(fileURLWithPath: "/opt/homebrew/bin/ffmpeg")
-    task.arguments = ["-f", "avfoundation", "-video_size", "640x480", "-framerate", "30", "-i", "0", outputFilePath]
+    task.arguments = ["-f", "avfoundation", "-video_size", "640x480", "-framerate", "30", "-i", "0", recordPath]
     task.standardOutput = FileHandle.nullDevice
     task.standardError = FileHandle.nullDevice
     
@@ -74,6 +79,16 @@ class CameraManager: ObservableObject {
       
     } catch {
       LogsManager.shared.addLog(text: "Failed to stop recording", type: 3)
+    }
+  }
+  
+  // MARK: Remove Record
+  /// Removes the recorded video
+  func removeRecord() -> Void {
+    do {
+      try FileManager.default.removeItem(atPath: recordPath)
+    } catch {
+      LogsManager.shared.addLog(text: "Failed to remove record", type: 3)
     }
   }
 }

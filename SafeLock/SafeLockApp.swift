@@ -15,14 +15,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       if let help = menu.items.first(where: { $0.title == "Help"}) { menu.removeItem(help) }
     }
   }
-  
+
   // MARK: Application Termination
   /// This method is called when the application is about to terminate
   func applicationWillTerminate(_ aNotification: Notification) {
     // Remove temporary video file if it exists
-    try? FileManager.default.removeItem(
-      atPath: (NSTemporaryDirectory() as NSString).appendingPathComponent("webcam.mp4")
-    )
+    if CameraManager.shared.hasRecorded { // Check if a video has been recorded
+      if UserDefaults.standard.bool(forKey: "\(Bundle.main.bundleIdentifier!).saveState") { // Check if the user has enabled saving the video
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd_MM_yy-HH_mm"
+
+        // Move the video file to the desktop
+        let fileManager = FileManager.default
+        let desktopURL = fileManager.urls(for: .desktopDirectory, in: .userDomainMask).first!
+        let newFileName = "\(dateFormatter.string(from: Date())).\(URL(fileURLWithPath: CameraManager.shared.recordPath).pathExtension)"
+        let destinationURL = desktopURL.appendingPathComponent(newFileName)
+
+        try? fileManager.moveItem(at: URL(fileURLWithPath: CameraManager.shared.recordPath), to: destinationURL)
+
+        CameraManager.shared.removeRecord() // Remove the temporary video file
+      } else {
+        CameraManager.shared.removeRecord() // Remove the temporary video file
+      }
+    }
   }
 }
 
@@ -31,12 +46,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 struct BlurBackground: NSViewRepresentable {
   func makeNSView(context: Context) -> NSVisualEffectView {
     let effectView = NSVisualEffectView()
-    
+
     effectView.state = .active // Set to active for the blurred effect
-    
+
     return effectView
   }
-  
+
   func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
 }
 
@@ -47,7 +62,7 @@ struct SecureMacApp: App {
   @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate // Manages the main application window in MacOS context
   @Environment(\.openWindow) var openWindow // Function to open a new window
   @State private var window: NSWindow! // Manages the main application window
-  
+
   var body : some Scene {
     // MARK: Main Window
     /// Display the main window
@@ -80,7 +95,7 @@ struct SecureMacApp: App {
         .keyboardShortcut("i", modifiers: .command) // Set keyboard shortcut
       }
     }
-    
+
     // MARK: Settings Window
     /// Display the settings window if the platform is macOS
 #if os(macOS)
@@ -90,7 +105,7 @@ struct SecureMacApp: App {
     .windowResizability(.contentSize) // Set window resizability to content size
     .defaultPosition(.center) // Display window in center of screen
 #endif
-    
+
     // MARK: About Window
     /// Display the about window
     Window("About SafeLock", id: "about") {

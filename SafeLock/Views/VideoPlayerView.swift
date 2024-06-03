@@ -41,9 +41,7 @@ struct VideoPlayerView: View {
       if cameraManager.hasRecorded {
         VideoViewer(
           player: AVPlayer(
-            url: URL(fileURLWithPath: (
-              NSTemporaryDirectory() as NSString).appendingPathComponent("webcam.mp4")
-            )
+            url: URL(fileURLWithPath: cameraManager.recordPath)
           )
         )
         .cornerRadius(10)
@@ -105,4 +103,3 @@ struct VideoPlayerView: View {
     }
   }
 }
-

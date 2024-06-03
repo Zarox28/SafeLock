@@ -7,7 +7,7 @@
 
 <br />
 
-> Version: **2.0.1**
+> Version: **2.1.0**
 
 ---
 
@@ -25,6 +25,8 @@
 ## About
 
 Welcome to SafeLock, a macOS app designed to enhance your screen security. SafeLock not only locks your screen but also features a unique capability: it records with your webcam if any movement is detected. This added layer of security ensures that your device remains protected from unauthorized access.
+
+You can save the recorded video to your device and view it later. SafeLock is a simple and effective way to keep your device secure.
 
 ## Requirements
 

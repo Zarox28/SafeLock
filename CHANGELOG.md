@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2024-06_03
+
+### Added
+
+- Added settings to save video recorded
+- Added `removeRecod` function
+
 ## [2.0.1] - 2024-06-03
 
 ### Changed
