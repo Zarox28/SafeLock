@@ -7,7 +7,7 @@
 
 <br />
 
-> Version: **2.0.0**
+> Version: **2.0.1**
 
 ---
 
@@ -77,7 +77,7 @@ Contributing is disabled for this repository.
 
 ## License
 
-This project is licensed under the AGPL v3 License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the AGPL v3 License - see the [LICENSE](LICENSE) file for details.
 
 ## Authors
 

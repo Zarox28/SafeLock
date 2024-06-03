@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       if let help = menu.items.first(where: { $0.title == "Help"}) { menu.removeItem(help) }
     }
   }
-  
+
   // MARK: Application Termination
   /// This method is called when the application is about to terminate
   func applicationWillTerminate(_ aNotification: Notification) {
@@ -31,12 +31,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 struct BlurBackground: NSViewRepresentable {
   func makeNSView(context: Context) -> NSVisualEffectView {
     let effectView = NSVisualEffectView()
-    
+
     effectView.state = .active // Set to active for the blurred effect
-    
+
     return effectView
   }
-  
+
   func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
 }
 
@@ -47,7 +47,7 @@ struct SecureMacApp: App {
   @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate // Manages the main application window in MacOS context
   @Environment(\.openWindow) var openWindow // Function to open a new window
   @State private var window: NSWindow! // Manages the main application window
-  
+
   var body : some Scene {
     // MARK: Main Window
     /// Display the main window
@@ -80,17 +80,17 @@ struct SecureMacApp: App {
         .keyboardShortcut("i", modifiers: .command) // Set keyboard shortcut
       }
     }
-    
+
     // MARK: Settings Window
-    /// Display the settings window
-#if os(macOS)
-    Settings {
-      SettingsView()
-    }
-    .windowResizability(.contentSize) // Set window resizability to content size
-    .defaultPosition(.center) // Display window in center of screen
-#endif
-    
+    /// Display the settings window if the platform is macOS
+    #if os(macOS)
+      Settings {
+        SettingsView()
+      }
+      .windowResizability(.contentSize) // Set window resizability to content size
+      .defaultPosition(.center) // Display window in center of screen
+    #endif
+
     // MARK: About Window
     /// Display the about window
     Window("About SafeLock", id: "about") {

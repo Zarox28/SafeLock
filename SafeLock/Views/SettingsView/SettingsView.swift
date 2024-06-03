@@ -4,19 +4,21 @@ import SwiftUI
 // MARK: - Settings View
 /// The settings SwiftUI view for the settings screen of the application
 struct SettingsView: View {
+    // MARK: Tab Enum
     private enum Tabs: Hashable {
         case general, modules
     }
-    
+
     var body: some View {
+        // MARK: Tab View
         TabView {
-            GeneralSettingsView()
+            GeneralSettingsView() // General settings view
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }
                 .tag(Tabs.general)
-            
-            ModulesSettingsView()
+
+            ModulesSettingsView() // Modules settings view
                 .tabItem {
                     Label("Modules", systemImage: "checklist")
                 }
