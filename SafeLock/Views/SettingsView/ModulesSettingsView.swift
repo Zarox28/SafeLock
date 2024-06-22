@@ -6,8 +6,5 @@ import SwiftUI
 struct ModulesSettingsView: View {
   var body: some View {
     VStack {}
-    .padding().ignoresSafeArea()
-    .frame(width: 300, height: 200)
-    .background(BlurBackground().ignoresSafeArea()) // Apply blurred background
   }
 }

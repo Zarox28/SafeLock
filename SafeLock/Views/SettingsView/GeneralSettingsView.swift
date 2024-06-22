@@ -8,12 +8,7 @@ struct GeneralSettingsView: View {
 
   var body: some View {
     VStack {
-      Form {
-        Toggle("Save recording on exit", isOn: $saveState) // Toggle to enable/disable saving the recording on exit
-      }
+      Toggle("Save recording on exit", isOn: $saveState) // Toggle to enable/disable saving the recording on exit
     }
-    .padding().ignoresSafeArea()
-    .frame(width: 300, height: 200)
-    .background(BlurBackground().ignoresSafeArea()) // Apply blurred background
   }
 }
