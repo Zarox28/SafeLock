@@ -7,7 +7,7 @@
 
 <br />
 
-> Version: **2.1.0**
+> Version: **2.2.0**
 
 ---
 
@@ -17,7 +17,6 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Changelog](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
 - [Authors](#authors)
@@ -68,10 +67,6 @@ brew install ffmpeg
 <div align="center">
 	<img src="assets/recording.png" width="500"/>
 </div>
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for latest changes.
 
 ## Contributing
 

@@ -93,7 +93,9 @@ struct MainView: View {
             Button("Enable", action: {
               if cameraManager.hasRecorded { cameraManager.hasRecorded = false } // Reset hasRecorded
               global.lockScreen()
-              monitorsManager.startMouseMonitoring()
+              if UserDefaults.standard.bool(forKey: "\(Bundle.main.bundleIdentifier!).mouseModuleState") { // Check if the mouse module is enabled
+                monitorsManager.startMouseMonitoring()
+              }
               
               global.currentState = 2 // Set current state to enabled
               logsManager.addLog(text: "Alarm enabled", type: 0) // Show message when enabled
