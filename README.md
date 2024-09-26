@@ -16,6 +16,8 @@
 - [About](#about)
 - [Requirements](#requirements)
 - [Installation](#installation)
+  - [Install SafeLock with Homebrew](#install-safelock-with-homebrew)
+  - [Install SafeLock manually](#install-safelock-manually)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
