@@ -38,19 +38,19 @@ brew install ffmpeg
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/Zarox28/SafeLock/releases/latest) page.
+### Install SafeLock with Homebrew
 
-2. Install FFMPEG if you haven't already with homebrew by running the following command:
+Download the latest version with homebrew by running the following command:
 
 ```bash
-brew install ffmpeg
+brew install zarox28/homebrew-apps/safelock
 ```
 
-3. Open the downloaded `.dmg` file and drag the `SafeLock.app` to your Applications folder.
+### Install SafeLock manually
 
-4. Open `SafeLock.app` from your Applications folder.
+1. Download the latest release from the [Releases](https://github.com/Zarox28/SafeLock/releases/latest) page.
 
-5. Allow SafeLock to access your camera.
+2. Open the downloaded `.dmg` file and drag the `SafeLock.app` to your Applications folder.
 
 ## Usage
 
