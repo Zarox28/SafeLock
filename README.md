@@ -45,7 +45,7 @@ brew install ffmpeg
 Download the latest version with homebrew by running the following command:
 
 ```bash
-brew install zarox28/homebrew-apps/safelock
+brew install zarox28/apps/safelock
 ```
 
 ### Install SafeLock manually
