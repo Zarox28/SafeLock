@@ -32,11 +32,6 @@ You can save the recorded video to your device and view it later. SafeLock is a 
 ## Requirements
 
 - macOS 10.15 or later
-- FFMPEG must be installed on your system.
-
-```bash
-brew install ffmpeg
-```
 
 ## Installation
 
